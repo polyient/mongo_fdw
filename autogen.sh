@@ -66,7 +66,7 @@ function checkout_json_lib
 function install_json_lib
 {
 	cd json-c
-	cmake $JSONC_CFLAGS .
+	cmake -DCMAKE_INSTALL_LIBDIR=lib $JSONC_CFLAGS .
 	make install
 	cd ..
 }
