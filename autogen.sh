@@ -77,7 +77,7 @@ function install_json_lib
 function install_mongoc_driver
 {
 	cd mongo-c-driver
-	cmake -DENABLE_AUTOMATIC_INIT_AND_CLEANUP=OFF -DENABLE_SSL=AUTO .
+	cmake -DCMAKE_INSTALL_LIBDIR=lib -DENABLE_AUTOMATIC_INIT_AND_CLEANUP=OFF -DENABLE_SSL=AUTO .
 	make install
 	cd ..
 }
