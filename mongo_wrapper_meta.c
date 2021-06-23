@@ -94,11 +94,10 @@ MongoConnect(MongoFdwOptions *opt)
 									 opt->svr_database, opt->readPreference,
 									 opt->ssl ? "true" : "false");
 		else
-			uri = bson_strdup_printf("mongodb+srv://%s:%s@%s/%s?ssl=%s",
+			uri = bson_strdup_printf("mongodb+srv://%s:%s@%s/%s",
 									 opt->svr_username, opt->svr_password,
 									 opt->svr_address,
-									 opt->svr_database,
-									 opt->ssl ? "true" : "false");
+									 opt->svr_database);
 	}
 	else if (opt->replicaSet)
 	{
